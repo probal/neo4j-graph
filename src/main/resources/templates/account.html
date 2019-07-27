@@ -1,0 +1,17 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Account Entry</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Account Entry</h1>
+<form action="#" th:action="@{/account}" th:object="${account}" method="post">
+    <p>Name: <input type="text" th:field="*{name}" /></p>
+    <p>Address: <input type="text" th:field="*{address}" /></p>
+    <p>NID: <input type="text" th:field="*{nid}" /></p>
+    <p>Passport: <input type="text" th:field="*{passport}" /></p>
+    <p>Mobile: <input type="text" th:field="*{mobile}" /></p>
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
+</body>
+</html>

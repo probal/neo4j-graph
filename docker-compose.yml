@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+
+  database:
+    image: neo4j
+
+  app:
+    restart: always
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      ports:
+        - "8080:8080"
+    command: mvn clean spring-boot:run
+    depends_on:
+      - database
+
