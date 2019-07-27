@@ -10,8 +10,8 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
-      ports:
-        - "8080:8080"
+    ports:
+      - "9090:9090"
     command: mvn clean spring-boot:run
     depends_on:
       - database

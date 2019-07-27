@@ -32,33 +32,8 @@ public class AccountResource {
 
     @GetMapping("/account-list")
     public String showAll(Model model) {
-        model.addAttribute("accountList", accountRepository.findAll());
+        model.addAttribute("accountList", (List<Account>) accountRepository.findAll());
         return "account-list";
-    }
-
-    @GetMapping("/{name}")
-    public Account getAccountByName(@PathVariable String name) {
-        return accountRepository.findByName(name);
-    }
-
-    @GetMapping("/{mobile}")
-    public Account getAccountByMobile(@PathVariable String mobile) {
-        return accountRepository.findByMobile(mobile);
-    }
-
-    @GetMapping("/{nid}")
-    public Account getAccountByNID(@PathVariable String nid) {
-        return accountRepository.findByNid(nid);
-    }
-
-    @GetMapping("/{address}")
-    public Account getAccountByAddress(@PathVariable String address) {
-        return accountRepository.findByAddress(address);
-    }
-
-    @GetMapping("/{passport}")
-    public Account getAccountByPassport(@PathVariable String passport) {
-        return accountRepository.findByPassport(passport);
     }
 
     @GetMapping("/account")

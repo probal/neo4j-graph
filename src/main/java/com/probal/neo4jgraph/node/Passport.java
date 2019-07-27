@@ -1,22 +1,35 @@
 package com.probal.neo4jgraph.node;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.neo4j.ogm.annotation.GeneratedValue;
 import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.NodeEntity;
 
 @NodeEntity
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class Passport {
 
     @Id
     @GeneratedValue
     private Long id;
     private String passport;
+
+    public Passport() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getPassport() {
+        return passport;
+    }
+
+    public void setPassport(String passport) {
+        this.passport = passport;
+    }
 
     public Passport(String passport) {
         this.passport = passport;
