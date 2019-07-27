@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Account List</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Account List</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th> Name </th>
+        <th> Address </th>
+        <th> NID </th>
+        <th> Passport </th>
+        <th> Mobile </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${accountList.empty}">
+        <td colspan="2"> No Accounts Available </td>
+    </tr>
+    <tr th:each="account : ${accountList}">
+        <td><span th:text="${account.name}"> Name </span></td>
+        <td><span th:text="${account.address}"> Address </span></td>
+        <td><span th:text="${account.nid}"> NID </span></td>
+        <td><span th:text="${account.passport}"> Passport </span></td>
+        <td><span th:text="${account.mobile}"> Mobile </span></td>
+    </tr>
+    </tbody>
+</table>
+
+<a href="/account">Create another account</a>
+</body>
+</html>
