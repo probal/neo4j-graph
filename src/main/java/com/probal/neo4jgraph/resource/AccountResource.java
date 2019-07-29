@@ -30,6 +30,11 @@ public class AccountResource {
     @Autowired
     PassportRepository passportRepository;
 
+    @RequestMapping("/")
+    public String index() {
+        return "index";
+    }
+
     @GetMapping("/account-list")
     public String showAll(Model model) {
         model.addAttribute("accountList", (List<Account>) accountRepository.findAll());
