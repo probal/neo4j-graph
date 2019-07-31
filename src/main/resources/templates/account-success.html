@@ -9,21 +9,13 @@
     <!-- load MUI -->
     <link th:href="@{/css/bootstrap/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
     <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/x-icon" th:href="@{/img/favicon.ico}">
 </head>
 
 <body>
-<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-    <div class="container">
-        <a class="navbar-brand" href="https://www.eastdelta.edu.bd/" target="_blank">
-            <img th:src="@{/img/logo.png}" alt="EDU">
-        </a>
-        <div class="navbar-nav my-2">
-            <a class="nav-item nav-link active" href="/">Home</a>
-            <a class="nav-item nav-link" href="/account">New Account</a>
-            <a class="nav-item nav-link" href="/account-list">Account List</a>
-        </div>
-    </div>
-</nav>
+
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg" th:replace="navbar::navbarfragment"></nav>
+
 <div class="container page-container">
     <div class="alert alert-success" role="alert">
         Congratulations !!! Account Saved Successfully.

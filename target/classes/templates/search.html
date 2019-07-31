@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- load MUI -->
+    <link th:href="@{/css/bootstrap/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/x-icon" th:href="@{/img/favicon.ico}">
+    <title>Fraud Detector</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg" th:replace="navbar::navbarfragment"></nav>
+
+    <div class="container page-container">
+
+        <form action="#" th:action="@{/search}" th:object="${searchcriteria}" method="get">
+            <div class="main">
+                <input type="radio" name="searchType" value="mobile"> Mobile<br>
+                <input type="radio" name="searchType" value="nid"> NID<br>
+                <input type="radio" name="searchType" value="passport"> Passport
+
+
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search by" name="searchString" th:value="${searchString}">
+                        <div class="input-group-append">
+                            <input type="submit" value="Search" class="btn btn-primary" />
+                        </div>
+                    </div>
+
+            </div>
+
+
+            <div class="card">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col"> Name </th>
+                        <th scope="col"> Address </th>
+                        <th scope="col"> NID </th>
+                        <th scope="col"> Passport </th>
+                        <th scope="col"> Mobile </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:if="${accountList.empty}">
+                        <td colspan="2"> No Accounts Available </td>
+                    </tr>
+                    <tr th:each="account : ${accountList}">
+                        <th scope="row" th:text="${account.name}"></th>
+                        <td th:text="${account.address}"></td>
+                        <td th:text="${account.nid}"></td>
+                        <td th:text="${account.passport}"></td>
+                        <td th:text="${account.mobile}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

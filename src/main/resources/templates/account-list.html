@@ -2,28 +2,20 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>Account List</title>
+    <title>Fraud Detector</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- load MUI -->
     <link th:href="@{/css/bootstrap/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
     <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/x-icon" th:href="@{/img/favicon.ico}">
 </head>
 
 <body>
-<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-    <div class="container">
-        <a class="navbar-brand" href="https://www.eastdelta.edu.bd/" target="_blank">
-            <img th:src="@{/img/logo.png}" alt="EDU">
-        </a>
-        <div class="navbar-nav my-2">
-            <a class="nav-item nav-link active" href="/">Home</a>
-            <a class="nav-item nav-link" href="/account">New Account</a>
-            <a class="nav-item nav-link" href="/account-list">Account List</a>
-        </div>
-    </div>
-</nav>
+
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg" th:replace="navbar::navbarfragment"></nav>
+
 <div class="container page-container">
     <h4 class="display-4 text-center page-title">Account List</h4>
     <div class="card">
@@ -38,30 +30,16 @@
             </tr>
             </thead>
             <tbody>
-             <tr th:if="${accountList.empty}">
+                <tr th:if="${accountList.empty}">
                     <td colspan="2"> No Accounts Available </td>
                 </tr>
                 <tr th:each="account : ${accountList}">
-                    <td><span th:text="${account.name}"> Name </span></td>
-                    <td><span th:text="${account.address}"> Address </span></td>
-                    <td><span th:text="${account.nid}"> NID </span></td>
-                    <td><span th:text="${account.passport}"> Passport </span></td>
-                    <td><span th:text="${account.mobile}"> Mobile </span></td>
+                    <th scope="row" th:text="${account.name}"></th>
+                    <td th:text="${account.address}"></td>
+                    <td th:text="${account.nid}"></td>
+                    <td th:text="${account.passport}"></td>
+                    <td th:text="${account.mobile}"></td>
                 </tr>
-            <!--<tr>
-                <th scope="row">Mark Oliver</th>
-                <td>121/B, Chittagong</td>
-                <td>121455</td>
-                <td>EB 3314545</td>
-                <td>0175456454</td>
-            </tr>
-            <tr>
-                <th scope="row">Jhon Doe</th>
-                <td>246/B, Nur Ahmed Sarak, Chittagong</td>
-                <td>121455</td>
-                <td>EB 448ERSD</td>
-                <td>01657421234</td>
-            </tr>-->
             </tbody>
         </table>
     </div>

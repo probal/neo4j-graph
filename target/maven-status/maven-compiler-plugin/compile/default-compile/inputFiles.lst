@@ -1,6 +1,8 @@
 /Users/probal/projects/practice/neo4j-graph/src/main/java/com/edu/neo4jgraph/WebConfig.java
 /Users/probal/projects/practice/neo4j-graph/src/main/java/com/edu/neo4jgraph/node/Nid.java
+/Users/probal/projects/practice/neo4j-graph/src/main/java/com/edu/neo4jgraph/resource/SearchResource.java
 /Users/probal/projects/practice/neo4j-graph/src/main/java/com/edu/neo4jgraph/node/Mobile.java
+/Users/probal/projects/practice/neo4j-graph/src/main/java/com/edu/neo4jgraph/node/SearchCriteria.java
 /Users/probal/projects/practice/neo4j-graph/src/main/java/com/edu/neo4jgraph/repository/NidRepository.java
 /Users/probal/projects/practice/neo4j-graph/src/main/java/com/edu/neo4jgraph/repository/PassportRepository.java
 /Users/probal/projects/practice/neo4j-graph/src/main/java/com/edu/neo4jgraph/node/Account.java
