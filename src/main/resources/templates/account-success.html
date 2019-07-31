@@ -1,12 +1,38 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
-<body>
-<h1>Account Saved Successfully</h1>
-<a href="/account">Create another account</a>
-<a href="/">Home</a>
 
+<head>
+    <title>Fraud Detector</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- load MUI -->
+    <link th:href="@{/css/bootstrap/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="https://www.eastdelta.edu.bd/" target="_blank">
+            <img th:src="@{/img/logo.png}" alt="EDU">
+        </a>
+        <div class="navbar-nav my-2">
+            <a class="nav-item nav-link active" href="/">Home</a>
+            <a class="nav-item nav-link" href="/account">New Account</a>
+            <a class="nav-item nav-link" href="/account-list">Account List</a>
+        </div>
+    </div>
+</nav>
+<div class="container page-container">
+    <div class="alert alert-success" role="alert">
+        Congratulations !!! Account Saved Successfully.
+    </div>
+    <div>
+        <a href="/account" class="btn btn-primary">Add Account</a>
+        <a href="/account-list" class="btn btn-primary">Account List</a>
+    </div>
+</div>
 </body>
+
 </html>

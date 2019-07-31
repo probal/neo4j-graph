@@ -6,6 +6,7 @@ com/edu/neo4jgraph/resource/NidResource.class
 com/edu/neo4jgraph/resource/MobileResource.class
 com/edu/neo4jgraph/resource/PassportResource.class
 com/edu/neo4jgraph/node/Mobile.class
+com/edu/neo4jgraph/WebConfig.class
 com/edu/neo4jgraph/node/Account.class
 com/edu/neo4jgraph/repository/AccountRepository.class
 com/edu/neo4jgraph/repository/NidRepository.class

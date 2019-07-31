@@ -1,0 +1,12 @@
+.page-container{
+    margin-top: 32px; 
+    margin-bottom: 16px;
+}
+
+.page-title{
+    margin-bottom: 25px;
+}
+
+.table thead th{
+    border: none;
+}

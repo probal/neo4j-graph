@@ -1,14 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8">
     <title>Fraud Detector</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- load MUI -->
+    <link th:href="@{/css/bootstrap/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
-<p>East Delta University Logo</p>
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="https://www.eastdelta.edu.bd/" target="_blank">
+            <img th:src="@{/img/logo.png}" alt="EDU">
+        </a>
+        <div class="navbar-nav my-2">
+            <a class="nav-item nav-link active" href="/">Home</a>
+            <a class="nav-item nav-link" href="/account">New Account</a>
+            <a class="nav-item nav-link" href="/account-list">Account List</a>
+        </div>
+    </div>
+</nav>
 
-<a href="/account">Add new Account</a>
-<a href="/account-list">Account List</a>
+<div class="container page-container">
+    <h4 class="display-4 text-center page-title">Fraud Detector</h4>
 
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Add New Account</h5>
+                    <p class="card-text">Click the button below to create new account.</p>
+                    <a href="/account" class="btn btn-primary">Add New</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Account List</h5>
+                    <p class="card-text">Click the button below to view account list</p>
+                    <a href="/account-list" class="btn btn-primary">Account List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
+
 </html>
