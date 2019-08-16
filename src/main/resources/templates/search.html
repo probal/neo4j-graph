@@ -14,57 +14,57 @@
 
 <body>
 
-    <nav class="navbar navbar-dark bg-dark navbar-expand-lg" th:replace="navbar::navbarfragment"></nav>
+    <nav th:replace="navbar::navbarfragment"></nav>
 
     <div class="container page-container">
-
-        <form action="#" th:action="@{/search}" th:object="${searchcriteria}" method="get">
-            <div class="main">
-                <input type="radio" name="searchType" value="mobile"> Mobile<br>
-                <input type="radio" name="searchType" value="nid"> NID<br>
-                <input type="radio" name="searchType" value="passport"> Passport
-
-
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search by" name="searchString" th:value="${searchString}">
-                        <div class="input-group-append">
-                            <input type="submit" value="Search" class="btn btn-primary" />
-                        </div>
-                    </div>
-
+        <form class="my-4" action="#" th:action="@{/search}" th:object="${searchcriteria}" method="get">
+            <div class="input-group input-group-lg">
+                <div class="input-group-prepend">
+                    <select class="custom-select search-select" id="searchTypeSelect" name="searchType">
+                        <option selected>Choose Search Type</option>
+                        <option value="mobile">Mobile</option>
+                        <option value="nid">NID</option>
+                        <option value="passport">Passport</option>
+                    </select>
+                </div>
+                <input type="text" class="form-control" placeholder="Search by" name="searchString"
+                       th:value="${searchString}" />
+                <div class="input-group-append">
+                    <input type="submit" value="Search" class="btn btn-primary" />
+                </div>
             </div>
-
-
-            <div class="card">
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th scope="col"> Name </th>
-                        <th scope="col"> Address </th>
-                        <th scope="col"> NID </th>
-                        <th scope="col"> Passport </th>
-                        <th scope="col"> Mobile </th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr th:if="${accountList.empty}">
-                        <td colspan="2"> No Accounts Available </td>
-                    </tr>
-                    <tr th:each="account : ${accountList}">
-                        <th scope="row" th:text="${account.name}"></th>
-                        <td th:text="${account.address}"></td>
-                        <td th:text="${account.nid}"></td>
-                        <td th:text="${account.passport}"></td>
-                        <td th:text="${account.mobile}"></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-
         </form>
 
-    </div>
+        <div th:if="${accountList.size() ==1 }"class="alert alert-success" role="alert">
+            <h5 class="alert-heading mb-0">One result found for given query</h5>
+        </div>
+        <div th:if="${accountList.size() > 1}" class="alert alert-danger" role="alert">
+            <h5 class="alert-heading mb-0">More than one results Found for given query</h5>
+        </div>
+        <div th:if="${accountList.empty}" class="alert alert-dark" role="alert">
+            <h5 class="alert-heading mb-0">No result found for given query</h5>
+        </div>
 
+        <div class="row my-4">
+            <div th:each="account : ${accountList}" class="col-4 my-2">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 th:text="${account.name}" class="card-title"></h5>
+                        <h6 th:text="${account.address}" class="card-subtitle mb-3 text-muted"></h6>
+                        <div class="card-text mb-0">
+                            <b>NID: </b>121455
+                        </div>
+                        <div class="card-text mb-0">
+                            <b>Passport: </b>EB 3314545
+                        </div>
+                        <div class="card-text mb-0">
+                            <b>Mobile: </b>0175456454
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

@@ -14,7 +14,7 @@
 
 <body>
 
-<nav class="navbar navbar-dark bg-dark navbar-expand-lg" th:replace="navbar::navbarfragment"></nav>
+<nav th:replace="navbar::navbarfragment"></nav>
 
 <div class="container page-container">
     <h4 class="display-4 text-center page-title">Account Entry</h4>
@@ -24,7 +24,7 @@
             <form action="#" th:action="@{/account}" th:object="${account}" method="post">
                 <div class="form-group">
                     <div class="row">
-                        <div class="col-sm-2">
+                        <div class="col-sm-4">
                             <label for="name">Name</label>
                         </div>
                         <div class="col-sm-10">
