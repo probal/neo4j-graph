@@ -52,13 +52,13 @@
                         <h5 th:text="${account.name}" class="card-title"></h5>
                         <h6 th:text="${account.address}" class="card-subtitle mb-3 text-muted"></h6>
                         <div class="card-text mb-0">
-                            <b>NID: </b>121455
+                            <b>NID: </b><b th:text="${account.nid}"></b>
                         </div>
                         <div class="card-text mb-0">
-                            <b>Passport: </b>EB 3314545
+                            <b>Passport: </b><b th:text="${account.passport}"></b>
                         </div>
                         <div class="card-text mb-0">
-                            <b>Mobile: </b>0175456454
+                            <b>Mobile: </b><b th:text="${account.mobile}"></b>
                         </div>
                     </div>
                 </div>
