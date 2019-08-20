@@ -1,9 +1,6 @@
 package com.edu.neo4jgraph.resource;
 
-import com.edu.neo4jgraph.node.Nid;
-import com.edu.neo4jgraph.node.Account;
-import com.edu.neo4jgraph.node.Mobile;
-import com.edu.neo4jgraph.node.Passport;
+import com.edu.neo4jgraph.node.*;
 import com.edu.neo4jgraph.repository.AccountRepository;
 import com.edu.neo4jgraph.repository.MobileRepository;
 import com.edu.neo4jgraph.repository.NidRepository;
@@ -14,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class AccountResource {
@@ -42,10 +40,19 @@ public class AccountResource {
     }
 
     @GetMapping("/account")
-    public String greetingForm(Model model) {
+    public String getAccount(Model model) {
         model.addAttribute("account", new Account());
         return "account";
     }
+
+
+    @GetMapping("/account/{id}")
+    public String getAccountById(Model model, @ModelAttribute("id") String id) {
+        Optional<Account> account = accountRepository.findById(Long.valueOf(id));
+        model.addAttribute("account", account);
+        return "account";
+    }
+
 
     @PostMapping("/account")
     public String createAccount(@ModelAttribute Account account) {

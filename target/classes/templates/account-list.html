@@ -28,6 +28,7 @@
                 <th scope="col"> Passport </th>
                 <th scope="col"> Mobile </th>
                 <th scope="col"> Bank </th>
+                <th scope="col"> Action </th>
             </tr>
             </thead>
             <tbody>
@@ -41,6 +42,7 @@
                     <td th:text="${account.passport}"></td>
                     <td th:text="${account.mobile}"></td>
                     <td th:text="${account.bankName}"></td>
+                    <td><a th:href="@{/account/{id}(id=${account.id})}">Edit</a></td>
                 </tr>
             </tbody>
         </table>
