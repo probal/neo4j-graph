@@ -17,6 +17,7 @@ public class Account {
     private String passport;
     private String address;
     private String bankName;
+    private String remark;
 
     @Relationship(type = "NID_REL", direction = Relationship.INCOMING)
     private List<Nid> nids;
@@ -104,6 +105,14 @@ public class Account {
 
     public String getBankName() {
         return bankName;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
     }
 
     public void setBankName(String bankName) {
