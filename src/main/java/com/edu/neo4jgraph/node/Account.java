@@ -16,6 +16,7 @@ public class Account {
     private String mobile;
     private String passport;
     private String address;
+    private String bankName;
 
     @Relationship(type = "NID_REL", direction = Relationship.INCOMING)
     private List<Nid> nids;
@@ -99,5 +100,13 @@ public class Account {
 
     public void setPassports(List<Passport> passports) {
         this.passports = passports;
+    }
+
+    public String getBankName() {
+        return bankName;
+    }
+
+    public void setBankName(String bankName) {
+        this.bankName = bankName;
     }
 }
